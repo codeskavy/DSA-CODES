@@ -11,11 +11,13 @@ class Queue{
 
 //function to create a queue
 Queue* createqueue(unsigned capacity){
+    //memory alloacation
     Queue* queue=new Queue;
     queue->capacity=capacity;
     queue->front=queue->size=0;
     //important
     queue->rear=capacity-1;
+    //dynamic memeory allocation using array.
     queue->array=new int[queue->capacity];
     return queue;
 }
@@ -33,9 +35,11 @@ void enqueue(Queue* queue,int item){
     if(isfull){
         cout<<"queue is full";
     }
-
+    //incrementation of rear
     queue->rear=(queue->rear+1)%queue->capacity;
+    //putting value
     queue->array[queue->rear]=item;
+    //increasing size
     queue->size=queue->size+1;
     
 }
@@ -44,8 +48,11 @@ int dequeue(Queue* queue){
     if(isempty){
         cout<<"queue is empty";
     }
+    //item access
     int item=queue->array[queue->front];
+    //incrementation of front
     queue->front=(queue->front+1)%queue->capacity;
+    //decreasing the size as trhe suze decsreases
     queue->size-queue->size-1;
     return item;
 }

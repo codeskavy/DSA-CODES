@@ -22,17 +22,6 @@ class queue{
         front=rear=nullptr;
     }
 
-    void enqueue(int x){
-        QNode* temp=new QNode(x);
-        if(rear==nullptr)
-            front=rear=temp;
-            return;
-
-        rear->next=temp;
-        rear=temp;
-    }
-
-
     void dequeue(){
         if(front==nullptr)
             return;
@@ -43,22 +32,34 @@ class queue{
 
     }
 
-    void display()
-    {
-        if(isEmpty()){
-            cout<<"Queue is empty";
-        }
-        else{
-            cout<<front->data;
-            cout<<rear->,data;
-        }
+   
+    void enqueue(int x) {
+    QNode* temp = new QNode(x);
+    if (rear == nullptr) {
+        front = rear = temp;
+    } else {
+        rear->next = temp;
+        rear = temp;
     }
+}
+
+void display() {
+    if (isEmpty()) {
+        cout << "Queue is empty";
+    } else {
+        QNode* current = front;
+        while (current != nullptr) {
+            cout << current->data << " ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+}
+
 
     bool isEmpty() const {
         return front == nullptr;
     }
-
-
 };
 int main() {
     queue q;

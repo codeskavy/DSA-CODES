@@ -16,11 +16,13 @@ class stack{
     Node* top;
 
     public:
+    //constructor
     stack(){
         top=NULL;
     }
-
+    //in push we create a memory, push data into it and then points it to top, and then change the top to temp.
     void push(int data){
+        //new memory
         Node* temp=new Node(data);
         if(!temp){
             cout<<"Stack overflow";
@@ -45,7 +47,7 @@ class stack{
             exit(1);
         }
     }
-
+//in pop, we assign a memory to temp, we change temp to top,points top to next position and then we free the memory of temp.
     void pop(){
         Node* temp;
 
