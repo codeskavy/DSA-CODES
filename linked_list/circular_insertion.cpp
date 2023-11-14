@@ -3,7 +3,7 @@ using namespace std;
 class Node{
     int data;
     Node* next;
-}
+};
 void insertatbeginning(int value){
     Node* new_node=new Node(value);
     if(!head){
@@ -74,5 +74,6 @@ void display(){
     cout<<endl;
 }
 int main() {
+    Node* head;
     return 0;
 }
