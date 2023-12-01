@@ -54,6 +54,7 @@ void display(){
         cout<<current->data<<" ";
         current=current->next;
     }
+    
     cout<<endl;
 }
 int main() {
